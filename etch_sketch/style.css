@@ -1,0 +1,66 @@
+#wrapper {
+    display: flex;
+    justify-content: center;
+}    
+
+h1 {
+    text-align: center;
+}
+button {
+    margin: 0 2px 0 2px;
+    border-radius: 2px;
+}
+#btn-container {
+    width: 380px;
+    display: flex; 
+}
+.container {
+    width: 320px;
+    height: 320px;
+    border: 30px solid #f00;
+    border-radius: 10px;
+}
+
+.mark0 {
+    background-color: #ddd;
+}
+
+.mark10 {
+    background-color: rgba(0,0,0, 0.10);
+}
+
+.mark20 {
+    background-color: rgba(0,0,0, 0.20);
+}
+
+.mark30 {
+    background-color: rgba(0,0,0,0.30);
+}
+
+.mark40 {
+    background-color: rgba(0,0,0,0.40);
+}
+
+.mark50 {
+    background-color: rgba(0,0,0,0.50);
+}
+
+.mark60 {
+    background-color: rgba(0,0,0,0.60);
+}
+
+.mark70 {
+    background-color: rgba(0,0,0,0.70);
+}
+
+.mark80 {
+    background-color: rgba(0,0,0,0.80);
+}
+
+.mark90 {
+    background-color: rgba(0,0,0,0.90);
+}
+
+.mark100 {
+    background-color: rgba(0,0,0, 1.0);
+}
