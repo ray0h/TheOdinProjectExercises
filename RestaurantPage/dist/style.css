@@ -1,0 +1,134 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.bg-image {
+  filter: blur(4px);
+  height: 100%;
+  background-image: url('./images/cafe.jpeg');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#logo1, #logo2 {
+  height: 100px;
+  width: 100px;
+}
+
+#header-container {
+  font-family: 'Permanent Marker', cursive;
+  display: flex;
+  justify-content: space-around;
+  color: #ddd;
+  font-size: 24px;
+}
+
+nav {
+  margin-bottom: 10px;
+  background-color: gray;
+  padding: 5px 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  display: block;
+}
+
+button {
+  background-color: transparent;
+  border: none; 
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #eee;
+}
+
+.mainCard {
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  width: 80%;
+  height: 300px;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: rgba(0,0,0,0.5);
+  overflow-y: scroll;
+}
+
+.mainCard::-webkit-scrollbar{
+  display: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a {
+  color: #ddd;
+}
+
+h4 {
+  margin: 2px;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.card {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  #header-container {
+    font-size: 18px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 20px 1fr;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+  .card {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  #header-container {
+    font-size: 14px;
+  }
+  #logo1, #logo2 {
+    display: none;
+  }
+}
