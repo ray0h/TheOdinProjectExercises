@@ -5,12 +5,12 @@ const headerLoad = function () {
   headerCont.id = "header-container"
 
   let bobaTeaImg = document.createElement('img')
-  bobaTeaImg.src = "./images/bubble-tea.jpg"
+  bobaTeaImg.src = "/dist/images/bubble-tea.jpg"
   bobaTeaImg.alt = "Bubble tea"
   bobaTeaImg.id = "logo1"
 
   let beerImg = document.createElement('img')
-  beerImg.src = "./images/beer.jpg"
+  beerImg.src = "/dist/images/beer.jpg"
   beerImg.alt = "Glass of Beer"
   beerImg.id = "logo2"
 

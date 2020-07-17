@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Yet Another ToDo App</title>
+</head>
+<body>
+  <h1>To Do App</h1>
+  <div id="container"> 
+
+    <div id="left-container">
+      <div id="project-container">
+        Projects
+        <div id="project-list"></div>
+        <div id="addProjCont"><button id="addNewProject">Add New Project</button></div>
+      </div>
+      <div id="projFormCont" class="hidden">
+        <span class="form-header">
+          Add New Project:
+          <button id="closeProjForm">X</button>
+        </span>
+        <br/>
+        <form id="newProjForm">
+          <label for="newProject">
+            New Project: <br/>
+            <input type="text" id="newProject">
+          </label>
+          <br/>
+          <button type="submit">submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="right-container">
+
+      <div id="todoFormCont" class="hidden">
+        <span class="form-header">
+          Add New Todo:
+          <button id="closeTodoForm">X</button>
+        </span>
+        <form id="newTodoForm">
+          <br/>
+          <label for="newItem">
+            Item: 
+            <input type="text" id="newItem">
+          </label>
+          <br/>
+          <label for="newDuedate">
+            Due Date: 
+            <input type="date" id="newDuedate">
+          </label>
+          <br/>
+          <label for="newPriority">
+            Priority: 
+            <select name="priority" id="newPriority">
+              <option value="none">none</option>
+              <option value="high">high</option>
+              <option value="med">med</option>
+              <option value="low">low</option>
+            </select>
+          </label><br/>
+          <button type="submit">submit</button>
+        </form>
+      </div>
+
+      <div id="todo-container"> 
+        <div class="todo-header">
+          <div>Item</div>
+          <div>Due Date</div>
+          <div>Priority</div>
+          <div>Complete</div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="todos"></div>
+        <div id="addTodoCont"><button id="addNewTodo">Add New Todo</button></div>
+      </div>
+
+    </div>
+
+  </div>
+  </body>
+<script src="main.js"></script>
+</html>
