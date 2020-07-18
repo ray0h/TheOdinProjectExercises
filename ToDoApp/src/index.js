@@ -1,77 +1,37 @@
-import { renderProjects, renderCurrentTodos } from './display';
-import { toggleTodoForm, toggleNewProjectForm } from './controllers';
-import { addNewTodo, addNewProject } from './services';
+import { renderProjects, renderCurrentTodos } from "./displayControllers";
+import { addNewTodo, addNewProject } from "./stateControllers";
 
-let hardSetProjects = [
+let today = new Date();
+let defaultProjects = [
   {
-    project: "Work ToDos",
+    project: "My Project",
     todos: [
       {
-        item: "email boss",
-        dueDate: "2020-07-16",
+        item: "write more todos",
+        dueDate: today,
         complete: false,
         priority: "high"
       },
-      {
-        item: "call accounting",
-        dueDate: "2020-07-16",
-        complete: false,
-        priority: "med"
-      }
     ]
   },
-  {
-    project: "Vacation Planning",
-    todos: [
-      {
-        item: "check funds",
-        dueDate: "2020-07-16",
-        complete: false,
-        priority: "high"
-      }
-    ]
-  },
-  {
-    project: "Workout List",
-    todos: [
-      {
-        item: "50 burpees",
-        dueDate: "2020-07-16",
-        complete: false,
-        priority: "none"
-      },
-      {
-        item: "run 3 miles",
-        dueDate: "2020-07-16",
-        complete: false,
-        priority: "none"
-      }
-    ]
-  }
 ]
 
-let storage = window.localStorage.getItem('projects');
+// grab projects in localStorage
+let storage = window.localStorage.getItem("projects");
 if (!storage) {
-  window.localStorage.setItem('projects', JSON.stringify(hardSetProjects));
+  window.localStorage.setItem("projects", JSON.stringify(defaultProjects));
 }
 
+// render project list and todos
 renderProjects();
 renderCurrentTodos();
 
-let newTodoBtn = document.getElementById("addNewTodo");
-newTodoBtn.onclick = toggleTodoForm;
+// add event handlers to interactive elements
+let addNewTodoBtn = document.getElementById("addNewTodo");
+addNewTodoBtn.onclick=addNewTodo;
 
-let cancelTodoFormBtn = document.getElementById("closeTodoForm");
-cancelTodoFormBtn.onclick = toggleTodoForm;
+let addNewProjectBtn = document.getElementById("addNewProject");
+addNewProjectBtn.onclick=addNewProject;
 
-let newProjBtn = document.getElementById("addNewProject");
-newProjBtn.onclick = toggleNewProjectForm;
-
-let cancelProjFormBtn = document.getElementById("closeProjForm");
-cancelProjFormBtn.onclick = toggleNewProjectForm;
-
-let todoForm = document.getElementById("newTodoForm");
-todoForm.onsubmit=addNewTodo;
-
-let projForm = document.getElementById("newProjForm");
-projForm.onsubmit=addNewProject;
+let prioritySort = document.getElementById("priority-sort");
+prioritySort.onchange=renderCurrentTodos;
